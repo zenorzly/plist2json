@@ -47,20 +47,20 @@ function walk(node) {
 	}
 }
 
-function parse(xml) {
+function parse(xml, fileName) {
 	const doc = parser(
 		xml.replace(
 			'<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">',
 			""
 		)
 	);
-	const ret = rewriteMeta(walk(doc.root));
+	const ret = rewriteMeta(walk(doc.root),fileName);
 	return ret;
 }
 
-function rewriteMeta(doc) {
+function rewriteMeta(doc,fileName) {
 	let result = {}
-    result.file = "";
+    result.file = (fileName||"")+".png";
     result.frames = doc;
 	return result;
 }
