@@ -1,0 +1,11 @@
+{
+  "name": "convert",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./plist2json.js"
+  },
+  "dependencies": {
+    "xml-parser": "1.2.1"
+  }
+}
